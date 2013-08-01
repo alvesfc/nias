@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/desenv/!svn/ver/36808/sistemas/sat/trunk/Sat/java/SAT/src/main/java/br/com/ipd/sat/bundle/resources/client
+END
+ClientMessages_en_US.properties
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/desenv/!svn/ver/36808/sistemas/sat/trunk/Sat/java/SAT/src/main/java/br/com/ipd/sat/bundle/resources/client/ClientMessages_en_US.properties
+END
+ClientMessages_es_ES.properties
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/desenv/!svn/ver/36808/sistemas/sat/trunk/Sat/java/SAT/src/main/java/br/com/ipd/sat/bundle/resources/client/ClientMessages_es_ES.properties
+END
+ClientMessages_pt_BR.properties
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/desenv/!svn/ver/36808/sistemas/sat/trunk/Sat/java/SAT/src/main/java/br/com/ipd/sat/bundle/resources/client/ClientMessages_pt_BR.properties
+END

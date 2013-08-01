@@ -1,0 +1,310 @@
+#----------------------------------------------------------------------------
+# Arquivo de mensagens de exceções do Sistema SAT
+# Foi adotado oseguinte padrão na construção das mensagens de exceção.
+# Nome da Camada ou pacote principal seguido de underline e de um identificador da mensagem, 
+# tudo em letra minúscula.
+# Ex:
+# Camada DAO -> dao_falha_leitura_query = Não foi possível realizar a leitura da query no arquivo externo.  
+#----------------------------------------------------------------------------
+
+categoria_log_alta=Alta
+categoria_log_media=Média
+categoria_log_baixa=Baixa
+
+#-----------------------------------------------------------------------------
+#-------------------------------System----------------------------------------
+#-----------------------------------------------------------------------------
+system_log_desconhencido=Ocorreu um erro desconhecido.
+system_get_jdbc =Não foi possível fazer o Lookup do JdbcTemplate.
+system_get_ambiente=Não foi possível obter o Ambiente para realizar o Lookup do dataSource.
+
+
+#-----------------------------------------------------------------------------
+#-------------------------------Service ----------------------------------------
+#-----------------------------------------------------------------------------
+service_montar_num_terminal = Não foi possível montar o número do terminal, pois ocorreu um erro inesperado.
+service_montar_num_terminal_cnl = Não foi possível montar o número do terminal, pois o CNL está vazio ou nulo.
+service_montar_num_terminal_telefone = Não foi possível montar o número do terminal, pois o Telefone está vazio ou nulo.
+service_montar_num_terminal_conjugado = Não foi possível montar o número do terminal, pois o Conjugado está vazio ou nulo.
+service_montar_num_terminal_digito = Não foi possível montar o número do terminal, pois o Dígito verificador está vazio ou nulo.
+service_string_next_value =Não foi possível obter o próximo valor para o parâmetro informado, pois o parâmetro está nulo ou vazio. 
+service_next_value_numerico =Não foi possível obter o próximo valor para o parâmetro informado, pois o parâmetro não é um valor numérico. 
+service_next_value = Não foi possível obter o próximo valor para o parâmetro informado, pois ocorreu um erro inesperado. 
+service_gerador_tipo_rede_null=Não foi possível gerar os valores para o VO,  pois a tipo de rede não foi informado.
+service_gerador_tipo_servico_null=Não foi possível gerar os valores para o VO,  pois a tipo de serviço não foi informado.
+service_gerador_tipo_sistema_null=Não foi possível gerar os valores para o VO,  pois a tipo de sistema não foi informado.
+service_gerador_tipo_null=Não foi possível gerar os valores para o VO,  pois a tipo de teste não foi informado.
+service_gerador_tipo_path_null=Não foi possível gerar os valores para o VO,  pois a tipo de path não foi informado.
+service_gerador_tipo_porta_dslam_null=Não foi possível gerar os valores para o VO,  pois a tipo de porta dslam não foi informado.
+service_numero_vantive_n_gerado=Não foi possível obter o número vantive.
+service_reserva_n_realizada= A Reserva não foi realizada, pois {0} .
+service_status_resp_reserva_na_null = Não foi possível recuperar o Status da reserva , pois a mensagem NA está vazia ou nula.
+service_status_resp_reserva_erro = Não foi possível recuperar o Status da reserva , pois  correu um erro na tentativa de obter o valor entre a posição  1645 e 1656 da NA						
+service_conf_reserva_alta_status_path = O Status do Path está {0} , consulte o processo através do Número vantive {1}.
+service_reserva_resposta_nula = Não houve resposta do EAI. - CorrelationId {0}.
+service_conf_os_baixa_status_path = Processamento não foi finalizado dentro do tempo limte. consulte o processo através do Número vantive : {0} .
+service_alta_reserva_lado_a =A Query de consulta do Lado A , não encontrou nenhum resultado. Parâmetro terminal : {0}.
+service_alta_reserva_lado_z =A Query de consulta do Lado Z , não encontrou nenhum resultado. Parâmetro terminal : {0}.
+service_alta_confirmacao_os =A Query de confirmação de oS de Alta , não encontrou nenhum resultado. Parâmetro circPathInstId : {0}.
+service_alta_qtd_customer =A Query de quantidade de Customer , não encontrou nenhum resultado ou retornou Zero. Parâmetro nrc : {0}.
+service_alta_qtd_site =A Query de quantidade de Site , não encontrou nenhum resultado ou retornou Zero. Parâmetro nrc : {0}.
+service_alta_site =A Query que retorna o site , não encontrou nenhum resultado. Parâmetro nrc : {0}.
+service_alta_qtd_path_associado_cliente =A Query que retorna a quantidade de path associado ao cliente, não encontrou nenhum resultado ou retornou Zero. Parâmetro nrc : {0} e circPathInst {1}.
+service_alta_confirmacao_reserva =A Query de confirmação de reserva de Alta , não encontrou nenhum resultado. Parâmetro circPathInst : {0}.
+service_alta_portas_confirmacao_reserva =A Query que retorna as portas da confirmação da reserva , não encontrou nenhum resultado. Parâmetro portaDslam : {0} e portaAgregador {1}.
+service_alta_cancelamento_reserva =A Query de cancelamento de reserva de Alta , não encontrou nenhum resultado. Parâmetro porta : {0}.
+service_alta_cancelamento_reserva_pre_conf =A Query de cancelamento de reserva (Pré-Configurada) de Alta , não encontrou nenhum resultado. Parâmetro porta : {0}.
+service_alta_customer =A Query que retorna o Custumer , não encontrou nenhum resultado. Parâmetro nrc : {0}.
+service_alta_bandwidth =A Query que retorna o Bandwidth , não encontrou nenhum resultado ou Retornou Zero. Parâmetro bandwidth : {0}.
+service_alta_cancelamento_os =A Query cancelamento de OS de Alta , não encontrou nenhum resultado. Parâmetro circPathInstId : {0}.
+alta_conf_reserva_numero_os = O Número da OS não foi Atualizado.
+service_baixa_path_lado_a = A Query do Path do Lado A , não encontrou nenhum resultado. Parâmetro portaDSLAM : {0}.
+service_baixa_path_lado_z =A Query do Path  do Lado Z , não encontrou nenhum resultado. Parâmetro portaAgregador : {0}.
+service_baixa_status_ip =A Query que retorna o Status do IP , não encontrou nenhum resultado. Parâmetro ip : {0}.
+service_baixa_id_path_lado_a_z =A Query que retona o id do Path do Lado A e do Lado Z, não encontrou nenhum resultado. Parâmetro portaDslam : {0} e portaAgregador {1}.
+service_cenario_dslam_adsl =A Query do cenário DSLAM ADSL, não encontrou nenhum resultado. Parâmetro tipoPortaDslam : {0}.
+service_cenario_dslam_adsl2_plus =A Query do cenário DSLAM ADSL2Plus, não encontrou nenhum resultado. Parâmetro tipoPortaDslam : {0}.
+service_cenario_baixa =A Query do cenário de Baixa, não encontrou nenhum resultado. Parâmetro rede : {0} e servico {1}.
+service_cenario_atm_dslam_home =A Query do cenário de ATM Dslam Home, não encontrou nenhum resultado.
+service_cenario_atm_dslam_business =A Query do cenário de ATM Dslam Business, não encontrou nenhum resultado.
+service_pssba_xml_cliente =Não foi possível criar o XML de cadastro do Cliente no PSSBA, pois a Query não retornou nemhum resultado. Parâmetro nrc : {0}. 
+service_workflow_status_path =A Query que retorna o Status do Path no Workflow, não encontrou nenhum resultado. Parâmetro circPathInstID : {0}.
+service_confgSat_parametros =A Query que retorna a lista dos parâmetros de confuguração do SAT, não encontrou nenhum resultado.
+service_altPro_alteracao_reserva =A Query de validação de Alteração de reserva, não encontrou nenhum resultado. Parâmetro idPathOrigem : {0}.
+service_altPro_cancelamento_reserva =A Query de validação de Alteração de Cancelamento de reserva, não encontrou nenhum resultado. Parâmetro idPathOrigem : {0}.
+service_cenario_altPed =A Query de Cenário de Alteração (AltPed), não encontrou nenhum resultado.
+service_cenario_altPed_business =A Query de Cenário de Alteração business (AltPed), não encontrou nenhum resultado.
+service_cenario_altPro =A Query de Cenário de Alteração (AltPro), não encontrou nenhum resultado.
+service_cenario_altPro_business =A Query de Cenário de Alteração business (AltPro), não encontrou nenhum resultado.
+service_altPed_get_customer =A Query que retorna o Custumer , não encontrou nenhum resultado. Parâmetro nrc : {0}.
+service_altPed_get_site =A Query que retorna o Site , não encontrou nenhum resultado. Parâmetro nrc : {0}.
+service_granite_uda_path =A Query que retorna os Dados da UDA do Path , não encontrou nenhum resultado. Parâmetro Grupo : {0} CircInstPathId: {1}.
+service_granite_uda_site =A Query que retorna os Dados da UDA do Site , não encontrou nenhum resultado. Parâmetro Grupo : {0} NRC: {1}.
+service_granite_uda_customer =A Query que retorna os Dados da UDA do Customer , não encontrou nenhum resultado. Parâmetro Grupo : {0} NRC: {1}.
+service_site_logradouro_by_site_id =A Query que retorna os Dados do logradouro do Site, não encontrou nenhum resultado. Parâmetro siteInstId: {0}.
+service_site_localidade_by_nrc =A Query que retorna os Dados da Localidade do Site, não encontrou nenhum resultado. Parâmetro NRC: {0}.
+service_customer_by_nrc =A Query que retorna os Dados do Customer , não encontrou nenhum resultado. Parâmetro NRC: {0}.
+service_customer_cliente_geral =A Query que retorna os Dados do Cliente Geral do Customer , não encontrou nenhum resultado. Parâmetro NRC: {0}.
+service_customer_cliente_desenpenho =A Query que retorna os Dados do Cliente Desenpenho do Customer , não encontrou nenhum resultado. Parâmetro NRC: {0}. 
+service_path_line =A Query que retorna os Dados da UDA Line do Path , não encontrou nenhum resultado. Parâmetro NRC: {0}.
+service_path_uda_path_estado =A Query que retorna os Dados da UDA Path Estado do Path , não encontrou nenhum resultado. Parâmetro CircInstPathId: {0}.
+service_path_uda_path_processo =A Query que retorna os Dados da UDA Path Processo do Path , não encontrou nenhum resultado. Parâmetro CircInstPathId: {0}.
+service_path_uda_interdados =A Query que retorna os Dados da UDA Interdados do Path , não encontrou nenhum resultado. Parâmetro CircInstPathId: {0}.
+service_path_uda_conexao =A Query que retorna os Dados da UDA Conexão do Path , não encontrou nenhum resultado. Parâmetro CircInstPathId: {0}.
+service_port_uda_adsl_profile =A Query que retorna os Dados da UDA ADSL PROFILE da PORT , não encontrou nenhum resultado. Parâmetro CircInstPathId: {0}.
+service_port_uda_adsl_profile_by_service_code =A Query que retorna os Dados da UDA ADSL PROFILE da PORT a partir do Service Code , não encontrou nenhum resultado. Parâmetro serviceCode: {0}.
+service_get_path_by_id =A Query que retorna os Dados do Path a partir do CircInstPathId , não encontrou nenhum resultado. Parâmetro CircInstPathId: {0}.
+service_get_full_path_by_id =A Query que retorna os Dados do Path e das Uda associadas ao Path a partir do CircInstPathId , não encontrou nenhum resultado. Parâmetro CircInstPathId: {0}.
+service_altped_cenario_origem_tipo_equipamento =Não foi possível criar o cenário de AltPed ,pois o tipo de equipamento do cenário de origem não foi informado.
+service_altped_cenario_origem_tipo_porta =Não foi possível criar o cenário de AltPed ,pois o tipo de porta do cenário de origem não foi informado.
+service_altped_cenario_origem_tipo_rede =Não foi possível criar o cenário de AltPed ,pois o tipo de rede do cenário de origem não foi informado.
+service_altped_cenario_origem_tipo_servico =Não foi possível criar o cenário de AltPed ,pois o tipo de serviço do cenário de origem não foi informado.
+service_altped_cenario_origem_speedyK =Não foi possível criar o cenário de AltPed ,pois o speedyK do cenário de origem não foi informado.
+service_altped_cenario_destino_tipo_equipamento =Não foi possível criar o cenário de AltPed ,pois o tipo de equipamento do cenário de destino não foi informado.
+service_altped_cenario_destino_tipo_porta =Não foi possível criar o cenário de AltPed ,pois o tipo de porta do cenário de destino não foi informado.
+service_altped_cenario_destino_tipo_rede =Não foi possível criar o cenário de AltPed ,pois o tipo de rede do cenário de destino não foi informado.
+service_altped_cenario_destino_tipo_servico =Não foi possível criar o cenário de AltPed ,pois o tipo de serviço do cenário de destino não foi informado.
+service_altped_cenario_destino_speedyK =Não foi possível criar o cenário de AltPed ,pois o speedyK do cenário de destino não foi informado.
+service_site_lado_a_by_nrc =A Query que retorna os Dados do Site do Lado A a partir do NRC , não encontrou nenhum resultado. Parâmetro nrc: {0}.
+service_site_lado_z_by_nrc =A Query que retorna os Dados do Site do Lado Z a partir do NRC , não encontrou nenhum resultado. Parâmetro nrc: {0}.
+service_full_site_lado_a_by_nrc =A Query que retorna os Dados do Site do Lado A com o Logradouro e a Localidade a partir do NRC , não encontrou nenhum resultado. Parâmetro nrc: {0}.
+service_full_site_lado_z_by_nrc =A Query que retorna os Dados do Site do Lado Z com o Logradouro e a Localidade a partir do NRC , não encontrou nenhum resultado. Parâmetro nrc: {0}.
+service_reserva_motivo_null = Não houve resposta do EAI ao tentar realizar uma Reserva.
+service_reserva_alt_ped_motivo = A Reserva não foi realizada. Resposta do EAI: {0}
+service_port_uda_endIpPc_dslam =A Query que retorna os Dados da UDA PORT_ENDIP (DSLAM) do Element Port, não encontrou nenhum resultado.
+service_port_uda_endIpPc_agregador =A Query que retorna os Dados da UDA PORT_ENDIP (AGREGADOR) do Element Port, não encontrou nenhum resultado.
+service_cenario_fibra_alta_iptv=A Query do cenário de Alta de IPTV do Fibra, não encontrou nenhum resultado.
+service_get_servico_iptv=A Query que retorna os Dados do Serviço de IPTV , não encontrou nenhum resultado. Parâmetro nrc: {0}.
+service_get_servico_speedy=A Query que retorna os Dados do Serviço de SPEEDY , não encontrou nenhum resultado. Parâmetro nrc: {0}.
+service_get_servico_speedy_iptv=A Query que retorna os Dados do Serviço de SPEEDY/IPTV , não encontrou nenhum resultado. Parâmetro nrc: {0}.
+service_lista_cenario_altPro=A Query que busca uma lista de Cenários de Alteração (AltPro), não encontrou nenhum resultado.
+#-----------------------------------------------------------------------------
+#-------------------------------DAO-------------------------------------------
+#-----------------------------------------------------------------------------
+dao_query =Não foi possível ler a query no diretório : {0} .
+
+dao_alta_reserva_lado_a =Ocorreu um erro ao tentar executar a Query de reserva do Lado A : {0}.
+dao_alta_reserva_lado_z =Ocorreu um erro ao tentar executar a Query de reserva do Lado Z : {0}.
+dao_alta_confirmacao_os =Ocorreu um erro ao tentar executar a Query de confirmação de oS de Alta : {0}.
+dao_alta_cancelamento_os =Ocorreu um erro ao tentar executar a Query cancelamento de OS de Alta : {0}.
+dao_alta_qtd_customer =Ocorreu um erro ao tentar executar a Query de quantidade de Customer : {0}.
+dao_alta_qtd_site =Ocorreu um erro ao tentar executar a Query de quantidade de Site : {0}.
+dao_alta_site =Ocorreu um erro ao tentar executar a Query que retorna o site  : {0}.
+dao_alta_qtd_path_associado_cliente =Ocorreu um erro ao tentar executar a Query que retorna a quantidade de path associado ao cliente  : {0}.
+dao_alta_confirmacao_reserva =Ocorreu um erro ao tentar executar a Query de confirmação de reserva de ALta  : {0}.
+dao_alta_cancelamento_reserva =Ocorreu um erro ao tentar executar a Query de cancelamento de reserva de Alta  : {0}.
+dao_alta_portas_confirmacao_reserva =Ocorreu um erro ao tentar executar a Query que retorna as portas da confirmação da reserva  : {0}.
+dao_alta_customer =Ocorreu um erro ao tentar executar a Query que retorna o Custumer  : {0}.
+dao_alta_bandwidth =Ocorreu um erro ao tentar executar a Query que retorna o Bandwidth  : {0}.
+
+dao_baixa_path_lado_a = Ocorreu um erro ao tentar executar a Query do Path do Lado A : {0}.
+dao_baixa_path_lado_z =Ocorreu um erro ao tentar executar a Query do Path  do Lado Z : {0}.
+dao_baixa_status_ip =Ocorreu um erro ao tentar executar a Query que retorna o Status do IP : {0}.
+dao_baixa_id_path_lado_a_z =Ocorreu um erro ao tentar executar a Query que retona o id do Path do Lado A e do Lado Z : {0}.
+dao_cenario_dslam_adsl = Ocorreu um erro ao tentar executar a Query  do cenário DSLAM ADSL : {0}.
+dao_cenario_dslam_adsl2_plus =Ocorreu um erro ao tentar executar a Query do cenário DSLAM ADSL2Plus : {0}.
+dao_cenario_baixa =Ocorreu um erro ao tentar executar a Query do cenário de Baixa : {0}.
+dao_cenario_atm_dslam_home =Ocorreu um erro ao tentar executar a Query do cenário de ATM Dslam Home : {0}.
+dao_cenario_atm_dslam_business =Ocorreu um erro ao tentar executar a Query do cenário de ATM Dslam Business : {0}.
+dao_pssba_cadastrar_cliente =Ocorreu um erro ao tentar cadastrar o cliente no Stub do PSSBA.
+dao_sagre_insert_response =Ocorreu um erro ao tentar inserir um registro no Stub do SAGRE.
+dao_sagre_insert_fibra =Ocorreu um erro ao tentar inserir um registro do Fibra no Stub do SAGRE.
+dao_sagre_create_response =Ocorreu um erro ao tentar criar um cenrário para inserção de um registro no Stub do SAGRE. 
+dao_workflow_status_path =Ocorreu um erro ao tentar executar a Query que retorna o Status do Path no Workflow : {0}.
+dao_confgSat_parametros =Ocorreu um erro ao tentar executar a Query que retorna a lista dos parâmetros de confuguração do SAT : {0}.
+dao_confgSat_atualizar_parametros = Ocorreu um erro ao tentar executar a Query que atualiza os parâmetros de confuguração do SAT : {0}. 
+dao_altPro_alteracao_reserva =Ocorreu um erro ao tentar executar a Query de validação de Alteração de reserva : {0}.
+dao_altPro_cancelamento_reserva =Ocorreu um erro ao tentar executar a Query de validação de Alteração de Cancelamento de reserva : {0}.
+dao_altPed_cenario =Ocorreu um erro ao tentar executar a Query do cenário de AltPed : {0}.
+dao_altPed_cenario_business =Ocorreu um erro ao tentar executar a Query do cenário de AltPed business: {0}.
+dao_altPed_get_customer_by_nrc =Ocorreu um erro ao tentar executar a Query que retorna os dados do Customer a partir do NRC : {0}.
+dao_altPed_get_site_by_nrc =Ocorreu um erro ao tentar executar a Query que retorna os dados do Site a partir do NRC : {0}.
+dao_granite_uda_path =Ocorreu um erro ao tentar executar a Query que retorna os dados da UDA do Path  : {0}.
+dao_granite_uda_site =Ocorreu um erro ao tentar executar a Query que retorna os dados da UDA do Site  : {0}.
+dao_granite_uda_customer =Ocorreu um erro ao tentar executar a Query que retorna os dados da UDA do Site : {0}.
+dao_site_logradouro_by_id =Ocorreu um erro ao tentar executar a Query que retorna os dados do Logradouro do Site : {0}.
+dao_customer_by_nrc =Ocorreu um erro ao tentar executar a Query que retorna os dados do Customer : {0}.
+dao_path_uda_line =Ocorreu um erro ao tentar executar a Query que retorna os dados da UDA Line : {0}.
+dao_path_uda_datas =Ocorreu um erro ao tentar executar a Query que retorna os dados da UDA Datas do Path : {0}.
+dao_port_uda =Ocorreu um erro ao tentar executar a Query que retorna os dados da UDA da Porta (Port) : {0}.
+dao_port_uda_adsl_profile =Ocorreu um erro ao tentar executar a Query que retorna os dados da UDA ADSL PROFILE da Porta (Port) : {0}.
+dao_get_map=Ocorreu um erro ao tentar obter um Map na execução da Query : {0}.
+dao_get_int=Ocorreu um erro ao tentar obter um Inteiro na execução da Query : {0}.
+dao_get_list=Ocorreu um erro ao tentar obter um List na execução da Query : {0}.
+dao_altPro_cenario=Ocorreu um erro ao tentar obter os dados do cenário de AltPro na execução da Query : {0}. 
+dao_altPro_cenario_business=Ocorreu um erro ao tentar obter os dados do cenário (Business) de AltPro na execução da Query : {0}. 
+dao_fibra_cenario_alta=Ocorreu um erro ao tentar obter os dados do cenário de ALTA IPTV do Fibra na execução da Query : {0}. 
+
+#-----------------------------------------------------------------------------
+#-------------------------------Integration---------------------------------------
+#-----------------------------------------------------------------------------
+integration_text_message_to_string = Ocorreu um erro ao tentar extrair o conteúdo de uma TextMessage.
+integration_jms_send_message_id =  A mensagem não foi enviada , pois não possível obter o Correlation ID da mensagem enviada. 
+integration_jms_send_message_conteudo= Não será possível enviar a mensagem JMS, pois o conteúdo está vazio ou nulo.
+integration_jms_send_message_fila=Não será possível enviar a mensagem JMS, pois a fila de destino não foi informada.
+
+integration_jms_retrieve_message_correlation_id_nulo = Não possível obter a mensagem JMS, pois o Correlation ID está nulo ou inválido. 
+integration_jms_retrieve_message_fila_nula =  Não possível obter a mensagem JMS, pois a fila não foi informada. 
+
+integration_motivo_resp_reserva_na_null = Não foi possível recuperar o Motivo da reserva , pois a mensagem NA está vazia ou nula.
+integration_motivo_resp_reserva_erro = Não foi possível recuperar o Motivo da reserva ,pois o correu um erro na tentativa de obter o valor entre a posição 1657 e {0} da NA.
+
+#-----------------------------------------------------------------------------
+#-------------------------------Validações Default----------------------------
+#-----------------------------------------------------------------------------
+default_msg_validator = está com o valor {0} e o esperado é {1}.
+
+
+#-----------------------------------------------------------------------------
+#-------------------------------Validações de baixa----------------------------
+#-----------------------------------------------------------------------------
+
+baixa_conf_os_status_path = STATUS do PATH diferente de CONFIGURADO : {0} .
+baixa_conf_os_tipo_enderecamento = O campo TIPO_ENDERECAMENTO da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_produto = O campo PRODUTO da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_distancia = O campo DISTANCIA da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_ddd = O campo DDD da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_telefone = O campo TELEFONE da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_terminal = O campo NUMERO_TERMINAL da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_perfil = O campo PERFIL da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_cod_perfil = O campo COD_PERFIL da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_line_cod_servico = O campo CODIGO_SERVICO da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_tipo_enderecamento = O campo TIPO_ENDERECAMENTO da UDA LINE do PATH ainda está preenchido.
+baixa_conf_os_clientes_nrc = O campo CLIENTES/NRC ainda está preenchido.
+baixa_conf_os_line_estado_uso = O campo ESTADO_USO da UDA PATH_ESTADO do PATH ainda está preenchido.
+baixa_conf_os_path_estado_auxiliar = O campo ESTADO_AUXILIAR da UDA PATH_ESTADO do PATH ainda está preenchido.
+baixa_conf_os_path_motivo = O campo MOTIVO da UDA PATH_ESTADO do PATH ainda está preenchido.
+
+baixa_conf_os_line_pre_provisionado_lado_a = Campo PRE_PROVISIONADO da UDA LINE do PATH lado A com valor diferente de PRECONFIGURADO_A.
+baixa_conf_os_line_pre_provisionado_lado_z = Campo PRE_PROVISIONADO da UDA LINE do PATH lado Z com valor diferente de PRECONFIGURADO_Z.
+baixa_conf_os_path_categoria_lado_a = Categoria do PATH lado A diferente de de PATH_PRECONFIGURADO.
+baixa_conf_os_path_categoria_lado_z = Categoria do PATH lado Z diferente de de PATH_PRECONFIGURADO.
+baixa_conf_os_line_completo_lado_a = Campo COMPLETO da UDA LINE do PATH lado A diferente de NÃO.
+baixa_conf_os_line_completo_lado_z = Campo COMPLETO da UDA LINE do PATH lado Z diferente de NÃO.
+baixa_conf_os_line_pre_provisionado = Campo PRE_PROVISIONADO da UDA LINE do PATH com valor diferente de SIM.
+baixa_conf_os_path_categoria = Categoria do PATH diferente de PATH_SPEEDY : {0} .
+baixa_conf_os_line_completo = Campo COMPLETO da UDA LINE do PATH diferente de SIM.
+baixa_conf_os_end_ip_pc = Campo END_IP_PC continua preenchido.
+baixa_conf_os_status_ip = Status do IP diferente de LIVRE.
+
+baixa_conf_os_line_completo = Campo COMPLETO da UDA LINE do PATH com valor incorreto
+baixa_conf_os_metro_line_pre_provisionado = Campo PRE_PROVISIONADO da UDA LINE do PATH com valor incorreto
+baixa_conf_os_metro_path_categoria = A categoria do PATH está diferente de PATH_SPEEDY : {0} .
+baixa_conf_os_metro_prota_dslam = Porta do DSLAM com status diferente de LIVRE : {0} .
+baixa_conf_os_metro_prota_agregador = Porta do AGREGADOR com status diferente de LIVRE : {0} .
+
+#-----------------------------------------------------------------------------
+#-------------------------------Validações de AltPro--------------------------
+#-----------------------------------------------------------------------------
+
+altpro_reserva_estado_path = Campo ESTADO_USO da UDA PATH_ESTADO do PATH diferente de MODIFICACAO : {0} .
+
+
+#-----------------------------------------------------------------------------
+#-------------------------------Validações--------------------------
+#-----------------------------------------------------------------------------
+
+
+validacao_path_status =O Campo Status do elemento PATH
+validacao_path_categoria =O Campo Categoria do elemento PATH
+validacao_path_bandwidth =O Campo BANDWIDTH do elemento PATH
+validacao_path_estado_uso =O Campo ESTADO_USO da UDA Path Estado do elemento PATH
+validacao_path_estado_auxiliar =O Campo ESTADO_AUXILIAR da UDA Path Estado do elemento PATH
+validacao_path_estado_motivo =O Campo MOTIVO da UDA Path Estado do elemento PATH
+
+validacao_path_line_tipo_enderecamento =O Campo TIPO_ENDERECAMENTO da UDA LINE do elemento PATH
+validacao_path_line_completo=O Campo TIPO_ENDERECAMENTO da UDA LINE do elemento PATH
+validacao_path_line_produto =O Campo PRODUTO da UDA LINE do elemento PATH
+validacao_path_line_perfil =O Campo PERFIL da UDA LINE do elemento PATH
+validacao_path_line_cod_perfil =O Campo COD_PERFIL da UDA LINE do elemento PATH
+validacao_path_line_cod_servico =O Campo CODIGO_SERVICO da UDA LINE do elemento PATH
+validacao_path_line_distancia=O Campo DISTANCIA da UDA LINE do elemento PATH
+validacao_path_line_ddd=O Campo DDD da UDA LINE do elemento PATH
+validacao_path_line_numero_terminal=O Campo NUMERO_TERMINAL da UDA LINE do elemento PATH
+validacao_path_line_telefone=O Campo TELEFONE da UDA LINE do elemento PATH
+validacao_path_line_pre_provisionado=O Campo PRE_PROVISIONADO da UDA LINE do elemento PATH
+
+validacao_path_datas_criacao=O Campo Data Criação da UDA DATAS do elemento PATH
+
+validacao_port_estado_dslam=O Campo STATUS do elemento PORT do Tipo DSLAM
+validacao_port_estado_agregador=O Campo STATUS do elemento PORT do Tipo AGREGADOR
+validacao_port_portaEndIp_endIpPc=O Campo END_IP_PC da UDA PORTA_END_IP do elemento PORT
+validacao_port_adslProfile=O Campo ADSLPROFILE da UDA ADSL_PROFILE do elemento PORT
+validacao_port_ativacaoUpLoadFis_tipo=O Campo TIPO da UDA ATIVACAO_UPLOAD_FIS do elemento PORT
+
+
+validacao_cliente_nao_criado=O cliente não foi criado no processo de confirmação da reserva.
+validacao_cliente_nao_duplicado=O cliente foi duplicado no processo de confirmação de reserva.
+validacao_cliente_nao_associado = O cliente não foi associado em um path no processo de confirmação da reserva.
+validacao_cliente_em_dois_path = O cliente foi associado em mais de um path no processo de confirmação de reserva.
+validacao_cliente_nome=O Campo NOME DO CLIENTE do elemento CUSTOMER
+validacao_cliente_nrc=O Campo NRC DO CLIENTE do elemento CUSTOMER
+validacao_cliente_estado=O Campo ESTADO do elemento CUSTOMER
+validacao_cliente_geral_tipo_documento=O Campo TIPO_DOCUMENTO da UDA CLIENTE GERAL do elemento CUSTOMER
+validacao_cliente_geral_numero_documento=O Campo NUMERO_DOCUMENTO da UDA CLIENTE GERAL do elemento CUSTOMER
+validacao_cliente_geral_nome_abreviado=O Campo NOME_ABREVIADO da UDA CLIENTE GERAL do elemento CUSTOMER
+
+validacao_site_nao_criado=O Site do cliente não foi criado no processo de confirmação da reserva.	
+validacao_site_duplicado=O Site do cliente foi duplicado no processo de confirmação de reserva.	
+validacao_site_logradouro_rua=O Campo RUA da UDA LOGRADOURO do elemento SITE
+validacao_site_logradouro_cidade=O Campo CIDADE da UDA LOGRADOURO do elemento SITE
+validacao_site_logradouro_estado=O Campo ESTADO da UDA LOGRADOURO do elemento SITE
+validacao_site_logradouro_cep=O Campo CEP da UDA LOGRADOURO do elemento SITE
+validacao_site_logradouro_andar=O Campo ANDAR da UDA LOGRADOURO do elemento SITE
+validacao_site_logradouro_tipo=O Campo TIPO da UDA LOGRADOURO do elemento SITE
+validacao_site_logradouro_numero=O Campo NUMERO da UDA LOGRADOURO do elemento SITE
+validacao_site_logradouro_bairro=O Campo BAIRRO da UDA LOGRADOURO do elemento SITE
+
+validacao_status_ip =O Status do IP
+validacao_equipament_equipamentoGeral_tipoRede=Campo TIPO_REDE da UDA EQUIPAMENTO_GERAL do elemento Equipament
+validacao_shelf_categoria=O Campo CATEGORIA do elemento SHELF
+
+validacao_remove_current_order=O registro não foi removido da alta_canc_reserva_current_order.
+validacao_conf_reserva_current_order=O Número da OS não foi Atualizado.
+
+validacao_porta_logica_amo_status=O Campo STATUS do elemento PORTA_LOGICA_AMO
+
+
+
+
+

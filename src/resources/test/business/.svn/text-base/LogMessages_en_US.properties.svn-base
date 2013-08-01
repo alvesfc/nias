@@ -1,0 +1,3 @@
+system_log_desconhencido=An unknown error occurred.
+
+service_reserva_resposta_nula =  There was no response from EAI {0}.
