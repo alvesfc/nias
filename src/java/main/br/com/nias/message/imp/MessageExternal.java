@@ -25,12 +25,12 @@ public class MessageExternal implements IMessage, Serializable {
 
 	@Override
 	public Object[] getArguments() {
-		return this.arguments;
+		return this.arguments.clone();
 	}
 	
 	@Override
 	public ITranslate getTranslation() {
-		this.translate = new DefaultTranslate();
+		this.translate = new DefaultTranslate(this);
 		return this.translate;
 	}
 	
