@@ -16,7 +16,7 @@ public class TemplateKeyDefault implements ITemplateKey {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String PREFIX = "lbl_";
+	private final String PREFIX = "lbl_";
 
 	@Override
 	public String generate(String name)  {

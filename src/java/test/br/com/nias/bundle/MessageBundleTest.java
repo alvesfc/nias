@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Properties;
+import java.util.ResourceBundle;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -17,21 +18,34 @@ import br.com.nias.bundle.imp.MessageBundleDefault;
 public class MessageBundleTest {
 
 	private static final String CONFIG_DATA_BASE = "config/dataBase";
-	private static final String CONFIG = "C:/kepler/Projetos/archipelago/nias/properties/configuracao.properties";
+	private static final String CONFIG = "/properties/configuracao.properties";
+	private static final String USER_DIR = System.getProperty("user.dir");
+	private static final String CONFIG_PATH = USER_DIR + CONFIG;
 	private static IBundleMap bundleMap;
 
-	@BeforeClass
+	//@BeforeClass
 	public static void init() {
 		Collection<String> fileNames = new ArrayList<String>();
-		fileNames.add(CONFIG);
+		fileNames.add(CONFIG_PATH);
 		fileNames.add(CONFIG_DATA_BASE);
-		bundleMap = new BundleMapDefault(fileNames);
+		// bundleMap = new BundleMapDefault(fileNames);
 
 	}
 
-	 @Test
+	//@Test
 	public void getResourseBundleFileNull() {
-		IMessageBundle msg = new MessageBundleDefault(bundleMap.getResourseBundle("", LocaleEnum.ENGLISH_USA));
+		try {
+			Properties prop = new Properties();
+			prop.load(new FileInputStream(CONFIG_PATH));
+			System.out.println(prop.getProperty("dataBase.name"));
+
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+
+		ResourceBundle resourceBundle = bundleMap.getResourseBundle(
+				CONFIG_DATA_BASE, LocaleEnum.ENGLISH_USA);
+		IMessageBundle msg = new MessageBundleDefault(resourceBundle);
 
 		System.out.println(msg.getMessage("dataBase.name"));
 		System.out.println(msg.getMessage("dataBase.user"));

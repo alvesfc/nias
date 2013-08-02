@@ -15,7 +15,7 @@ import br.com.nias.bundle.imp.MessageBundleI18N;
 public class BundleMapI18NTest {
 	private static IBundleMap bundleMap;
 	
-	@BeforeClass
+	//@BeforeClass
 	public static void init(){
 		Collection<String> fileNames = new ArrayList<String>();
 		fileNames.add("business/LogMessagesBusniess");

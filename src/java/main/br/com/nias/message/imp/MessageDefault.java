@@ -33,7 +33,7 @@ public class MessageDefault implements IMessage, Serializable {
 
 	@Override
 	public Object[] getArguments() {
-		return this.arguments.clone();
+		return this.arguments;
 	}
 	
 	@Override
