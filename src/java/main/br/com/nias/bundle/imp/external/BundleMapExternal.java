@@ -37,8 +37,7 @@ public class BundleMapExternal implements IBundleMap {
     private void createResourceMap() throws IOException {
         this.resourceBundleMap = new HashMap<String, ResourceBundle>();
         for (String fileName : fileNames) {
-            resourceBundleMap.put(fileName,
-                    new ExternalBundle(this.getProperties(fileName)));
+            resourceBundleMap.put(fileName, new ExternalBundle(this.getProperties(fileName)));
         }
     }
 

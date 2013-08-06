@@ -1,12 +1,12 @@
 package br.com.nias.bundle.imp.i18n;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.bundle.IBundleMap;
+import br.com.nias.util.Utility;
 
 /**
  * Implementacção da interface {@link IBundleMap}.</BR> Esta classe responsavel
@@ -22,42 +22,7 @@ public class BundleMapI18N implements IBundleMap {
     protected Collection<String> fileNames;
 
     /**
-     * Metodo responsavel em obter um {@link ResourceBundle} de acordo com o
-     * caminho e o {@link LocaleEnum}.
-     * 
-     * @param bundlePath
-     *            - String contendo o caminho do arquivo.
-     * @param locale
-     *            objeto contendo a linguagem.
-     * @return Objeto encontrado.
-     */
-    private ResourceBundle getResourceBundle(String bundlePath, LocaleEnum locale) {
-        return ResourceBundle.getBundle(bundlePath,LocaleEnum.getLocale(locale));
-    }
-
-    protected String getFullPath(String fileName, LocaleEnum locale) {
-        return fileName + "_" + locale.getLanguage() + "_" + locale.getCountry();
-    }
-
-    private void setFile(String fileName) {
-
-        for (LocaleEnum locale : LocaleEnum.values()) {
-            String fullBundlePath = this.getFullPath(fileName, locale);
-            ResourceBundle resource = this.getResourceBundle(fullBundlePath,locale);
-            resourceBundleMap.put(fullBundlePath, resource);
-        }
-    }
-
-    private void createResourceMap() {
-        this.resourceBundleMap = new HashMap<String, ResourceBundle>();
-
-        for (String fileName : fileNames) {
-            this.setFile(fileName);
-        }
-    }
-
-    /**
-     * Construtor responsavel em criar o Map de ResourceBundle a partir de uma
+     * Construtor responsável em criar o Map de ResourceBundle a partir de uma
      * lista de caminhos dos arquivos.
      * 
      * @param fileNames
@@ -65,11 +30,11 @@ public class BundleMapI18N implements IBundleMap {
      */
     public BundleMapI18N(Collection<String> fileNames) {
         this.fileNames = fileNames;
-        this.createResourceMap();
+        this.resourceBundleMap = Utility.createResourceMapI18N(fileNames);
     }
 
     @Override
     public ResourceBundle getResourseBundle(String file, LocaleEnum locale) {
-        return this.getResourceBundle(file, locale);
+        return Utility.getResourceBundle(file, locale);
     }
 }

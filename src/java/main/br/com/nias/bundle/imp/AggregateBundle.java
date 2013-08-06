@@ -46,6 +46,20 @@ public class AggregateBundle extends ResourceBundle {
             }
         }
     }
+    
+    public AggregateBundle(List<ResourceBundle> bundles) {
+        if (bundles != null) {
+            for (ResourceBundle bundle : bundles) {
+                Enumeration<String> keys = bundle.getKeys();
+                while (keys.hasMoreElements()) {
+                    String oneKey = keys.nextElement();
+                    if (!contents.containsKey(oneKey)) {
+                        contents.put(oneKey, bundle.getObject(oneKey));
+                    }
+                }
+            }
+        }
+    }
 
     @Override
     public Enumeration<String> getKeys() {
