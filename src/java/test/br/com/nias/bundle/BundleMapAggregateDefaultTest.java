@@ -9,31 +9,46 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import br.com.lombok.enumerator.LocaleEnum;
-import br.com.nias.bundle.imp.BundleMapDefault;
+import br.com.nias.bundle.imp.BundleMapAgregate;
 import br.com.nias.bundle.imp.i18n.MessageBundleI18N;
 
 
 
-public class BundleMapDefaultTest {
+public class BundleMapAggregateDefaultTest {
 	
     private static IBundleMap bundleMap;
     private static final String CONFIG = "config/config";
+    private static final String DATABASE = "config/dataBase";
     private static final String TEST = "config_test";
+    private static final String DB_NAME = "nome_do_banco";
+    
+    
     
     @BeforeClass
     public static void init() {
         Collection<String> fileNames = new ArrayList<String>();
         fileNames.add(CONFIG);
-        bundleMap = new BundleMapDefault(fileNames);
+        fileNames.add(DATABASE);
+        bundleMap = new BundleMapAgregate(fileNames);
 
     }
     
     @Test
-    public void testBundleMapDefaultl() {
+    public void testBundleMapConfig() {
         ResourceBundle bundle = bundleMap.getResourseBundle(CONFIG,LocaleEnum.DEFAULT);
         IMessageBundle msg = new MessageBundleI18N(bundle);
         String expecteds = "Linha de configuração";
         String actuals = msg.getMessage(TEST);
+
+        Assert.assertEquals(expecteds, actuals);
+    }
+    
+    @Test
+    public void testBundleMapDB() {
+        ResourceBundle bundle = bundleMap.getResourseBundle(DATABASE,LocaleEnum.DEFAULT);
+        IMessageBundle msg = new MessageBundleI18N(bundle);
+        String expecteds = "Data Base";
+        String actuals = msg.getMessage(DB_NAME);
 
         Assert.assertEquals(expecteds, actuals);
     }
