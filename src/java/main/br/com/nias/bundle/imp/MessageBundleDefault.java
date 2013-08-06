@@ -17,32 +17,31 @@ import br.com.nias.bundle.IMessageBundle;
  */
 public class MessageBundleDefault implements IMessageBundle, Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private ResourceBundle resourceBundle;
-	
-	public MessageBundleDefault(ResourceBundle resourceBundle) {
-		this.resourceBundle = resourceBundle;
-	}
+    private ResourceBundle resourceBundle;
 
-	@Override
-	public String getMessage(String key) {
-		
-		String value;
-		try {
-			value = resourceBundle.getString(key);
-		} catch (MissingResourceException e) {
-			value = key;
-		}
-		
-		return value;
-	}
+    public MessageBundleDefault(ResourceBundle resourceBundle) {
+        this.resourceBundle = resourceBundle;
+    }
 
-	@Override
-	public String getMessage(String key, Object... arguments) {
-		MessageFormat temp = new MessageFormat(this.getMessage(key));
-		return temp.format(arguments);
-	}
+    @Override
+    public String getMessage(String key) {
 
+        String value;
+        try {
+            value = resourceBundle.getString(key);
+        } catch (MissingResourceException e) {
+            value = key;
+        }
+
+        return value;
+    }
+
+    @Override
+    public String getMessage(String key, Object... arguments) {
+        MessageFormat temp = new MessageFormat(this.getMessage(key));
+        return temp.format(arguments);
+    }
 
 }

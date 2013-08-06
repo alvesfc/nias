@@ -1,5 +1,3 @@
-
-
 package br.com.nias.bundle.imp;
 
 import java.io.Serializable;
@@ -20,33 +18,32 @@ import br.com.nias.bundle.IBundleMap;
  */
 public class BundleMapDefault implements IBundleMap, Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Map<String, ResourceBundle> resourceBundleMap;
-	private Collection<String> fileNames;
+    private Map<String, ResourceBundle> resourceBundleMap;
+    private Collection<String> fileNames;
 
-	
-	private void createResourceMap() {
-		this.resourceBundleMap = new HashMap<String, ResourceBundle>();
-		for (String fileName : fileNames) {
-			resourceBundleMap.put(fileName,ResourceBundle.getBundle(fileName));
-		}
-	}
-	
-	/**
-	 * Construtor responsável em criar o Map de ResourceBundle a partir de uma
-	 * lista de caminhos dos arquivos.
-	 * 
-	 * @param fileNames
-	 *            - Collection contendo os caminhos dos arquivos.
-	 */
-	public BundleMapDefault(Collection<String> fileNames) {
-		this.fileNames = fileNames;
-		this.createResourceMap();
-	}
+    private void createResourceMap() {
+        this.resourceBundleMap = new HashMap<String, ResourceBundle>();
+        for (String fileName : fileNames) {
+            resourceBundleMap.put(fileName, ResourceBundle.getBundle(fileName));
+        }
+    }
 
-	@Override
-	public ResourceBundle getResourseBundle(String fileName, LocaleEnum locale) {
-		return this.resourceBundleMap.get(fileName);
-	}
+    /**
+     * Construtor responsável em criar o Map de ResourceBundle a partir de uma
+     * lista de caminhos dos arquivos.
+     * 
+     * @param fileNames
+     *            - Collection contendo os caminhos dos arquivos.
+     */
+    public BundleMapDefault(Collection<String> fileNames) {
+        this.fileNames = fileNames;
+        this.createResourceMap();
+    }
+
+    @Override
+    public ResourceBundle getResourseBundle(String fileName, LocaleEnum locale) {
+        return this.resourceBundleMap.get(fileName);
+    }
 }

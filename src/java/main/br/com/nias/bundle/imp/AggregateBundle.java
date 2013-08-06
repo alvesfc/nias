@@ -19,47 +19,47 @@ import br.com.nias.util.IteratorEnumeration;
  */
 class AggregateBundle extends ResourceBundle {
 
-	private Map<String, Object> contents = new HashMap<String, Object>();
-	private Locale locale;
+    private Map<String, Object> contents = new HashMap<String, Object>();
+    private Locale locale;
 
-	/**
-	 * Creates a new AggregateBundle.
-	 * 
-	 * @param bundles
-	 *            A list of source bundles, which shall be merged into one
-	 *            aggregated bundle. The newly created bundle will contain all
-	 *            keys from all source bundles. In case a key occurs in multiple
-	 *            source bundles, the value will be taken from the first bundle
-	 *            containing the key.
-	 */
-	public AggregateBundle(List<ResourceBundle> bundles,Locale locale) {
-		if (bundles != null) {
-			this.locale = locale;
-			for (ResourceBundle bundle : bundles) {
-				Enumeration<String> keys = bundle.getKeys();
-				while (keys.hasMoreElements()) {
-					String oneKey = keys.nextElement();
-					if (!contents.containsKey(oneKey)) {
-						contents.put(oneKey, bundle.getObject(oneKey));
-					}
-				}
-			}
-		}
-	}
+    /**
+     * Creates a new AggregateBundle.
+     * 
+     * @param bundles
+     *            A list of source bundles, which shall be merged into one
+     *            aggregated bundle. The newly created bundle will contain all
+     *            keys from all source bundles. In case a key occurs in multiple
+     *            source bundles, the value will be taken from the first bundle
+     *            containing the key.
+     */
+    public AggregateBundle(List<ResourceBundle> bundles, Locale locale) {
+        if (bundles != null) {
+            this.locale = locale;
+            for (ResourceBundle bundle : bundles) {
+                Enumeration<String> keys = bundle.getKeys();
+                while (keys.hasMoreElements()) {
+                    String oneKey = keys.nextElement();
+                    if (!contents.containsKey(oneKey)) {
+                        contents.put(oneKey, bundle.getObject(oneKey));
+                    }
+                }
+            }
+        }
+    }
 
-	@Override
-	public Enumeration<String> getKeys() {
-		return new IteratorEnumeration<String>(contents.keySet().iterator());
-	}
+    @Override
+    public Enumeration<String> getKeys() {
+        return new IteratorEnumeration<String>(contents.keySet().iterator());
+    }
 
-	@Override
-	protected Object handleGetObject(String key) {
-		return contents.get(key);
-	}
+    @Override
+    protected Object handleGetObject(String key) {
+        return contents.get(key);
+    }
 
-	@Override
-	public Locale getLocale() {
-		return this.locale;
-	}
+    @Override
+    public Locale getLocale() {
+        return this.locale;
+    }
 
 }

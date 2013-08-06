@@ -11,13 +11,14 @@ import br.com.lombok.enumerator.LocaleEnum;
  */
 public interface ITranslate {
 
-	/**
-	 * Método responsável em traduzir a mensagem de acordo com o
-	 * {@link LocaleEnum}
-	 * 
-	 * @param locale objeto contendo a localização (Linguagem)
-	 * @return String traduzida.
-	 */
-	public String transnlate(LocaleEnum locale);
+    /**
+     * Método responsável em traduzir a mensagem de acordo com o
+     * {@link LocaleEnum}
+     * 
+     * @param locale
+     *            objeto contendo a localização (Linguagem)
+     * @return String traduzida.
+     */
+    String transnlate(LocaleEnum locale);
 
 }
