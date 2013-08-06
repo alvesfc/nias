@@ -12,12 +12,12 @@ import br.com.nias.util.IteratorEnumeration;
 /**
  * A {@link ResourceBundle} which's content is aggregated from multiple source
  * bundles.
- * <p/>
+ * <p/> 
  * This class is package-private for the sake of testability.
  * 
  * @author Gunnar Morling
  */
-class AggregateBundle extends ResourceBundle {
+public class AggregateBundle extends ResourceBundle {
 
     private Map<String, Object> contents = new HashMap<String, Object>();
     private Locale locale;

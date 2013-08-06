@@ -1,10 +1,7 @@
-package br.com.nias.bundle.imp;
+package br.com.nias.bundle.imp.i18n;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -18,11 +15,11 @@ import br.com.nias.bundle.IBundleMap;
  * @author Marcos Alves Cunha
  * @version 1.0
  */
-public class BundleMapI18N implements IBundleMap, Serializable {
+public class BundleMapI18N implements IBundleMap {
     private static final long serialVersionUID = 1L;
 
-    private transient Map<String, ResourceBundle> resourceBundleMap;
-    private Collection<String> fileNames;
+    protected transient Map<String, ResourceBundle> resourceBundleMap;
+    protected Collection<String> fileNames;
 
     /**
      * Metodo responsavel em obter um {@link ResourceBundle} de acordo com o
@@ -34,36 +31,21 @@ public class BundleMapI18N implements IBundleMap, Serializable {
      *            objeto contendo a linguagem.
      * @return Objeto encontrado.
      */
-    private ResourceBundle getResourceBundle(String bundlePath,
-            LocaleEnum locale) {
-        return ResourceBundle.getBundle(bundlePath,
-                LocaleEnum.getLocale(locale));
+    private ResourceBundle getResourceBundle(String bundlePath, LocaleEnum locale) {
+        return ResourceBundle.getBundle(bundlePath,LocaleEnum.getLocale(locale));
     }
 
-    private String getFullPath(String fileName, LocaleEnum locale) {
-        return fileName + "_" + locale.getLanguage() + "_"
-                + locale.getCountry();
+    protected String getFullPath(String fileName, LocaleEnum locale) {
+        return fileName + "_" + locale.getLanguage() + "_" + locale.getCountry();
     }
 
     private void setFile(String fileName) {
 
         for (LocaleEnum locale : LocaleEnum.values()) {
             String fullBundlePath = this.getFullPath(fileName, locale);
-            ResourceBundle resource = this.getResourceBundle(fullBundlePath,
-                    locale);
+            ResourceBundle resource = this.getResourceBundle(fullBundlePath,locale);
             resourceBundleMap.put(fullBundlePath, resource);
         }
-    }
-
-    private List<ResourceBundle> getBundles(LocaleEnum locale) {
-        List<ResourceBundle> bundles = new ArrayList<ResourceBundle>();
-
-        for (String fileName : fileNames) {
-            bundles.add(resourceBundleMap.get(this
-                    .getFullPath(fileName, locale)));
-        }
-
-        return bundles;
     }
 
     private void createResourceMap() {
@@ -88,7 +70,6 @@ public class BundleMapI18N implements IBundleMap, Serializable {
 
     @Override
     public ResourceBundle getResourseBundle(String file, LocaleEnum locale) {
-        List<ResourceBundle> bundles = this.getBundles(locale);
-        return new AggregateBundle(bundles, LocaleEnum.getLocale(locale));
+        return this.getResourceBundle(file, locale);
     }
 }

@@ -1,9 +1,7 @@
 package br.com.nias.bundle.imp;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -19,25 +17,22 @@ import br.com.nias.bundle.IBundleMap;
  * @author Marcos Alves Cunha
  * @version 1.0
  */
-public class BundleMapAgregate implements IBundleMap, Serializable {
+public class BundleMapAgregate extends BundleMapDefault {
 
     private static final long serialVersionUID = 1L;
 
     private transient Map<String, ResourceBundle> resourceBundleMap;
     private Collection<String> fileNames;
 
-    private void createResourceMap() {
-        this.resourceBundleMap = new HashMap<String, ResourceBundle>();
-        for (String fileName : fileNames) {
-            resourceBundleMap.put(fileName, ResourceBundle.getBundle(fileName));
-        }
+    private String getFullPath(String fileName, LocaleEnum locale) {
+        return fileName + "_" + locale.getLanguage() + "_"+ locale.getCountry();
     }
 
-    private List<ResourceBundle> getBundles() {
+    private List<ResourceBundle> getBundles(LocaleEnum locale) {
         List<ResourceBundle> bundles = new ArrayList<ResourceBundle>();
 
         for (String fileName : fileNames) {
-            bundles.add(resourceBundleMap.get(fileName));
+            bundles.add(resourceBundleMap.get(getFullPath(fileName, locale)));
         }
 
         return bundles;
@@ -51,13 +46,13 @@ public class BundleMapAgregate implements IBundleMap, Serializable {
      *            - Collection contendo os caminhos dos arquivos.
      */
     public BundleMapAgregate(Collection<String> fileNames) {
-        this.fileNames = fileNames;
-        this.createResourceMap();
+        super(fileNames);
     }
 
     @Override
     public ResourceBundle getResourseBundle(String fileName, LocaleEnum locale) {
         Locale l = LocaleEnum.getLocale(locale);
-        return new AggregateBundle(this.getBundles(), l);
+        return new AggregateBundle(getBundles(locale), l);
     }
+
 }

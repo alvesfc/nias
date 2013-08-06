@@ -1,6 +1,5 @@
 package br.com.nias.bundle.imp;
 
-import java.io.Serializable;
 import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
@@ -15,7 +14,7 @@ import br.com.nias.bundle.IMessageBundle;
  * @version 1.0
  * 
  */
-public class MessageBundleDefault implements IMessageBundle, Serializable {
+public class MessageBundleDefault implements IMessageBundle {
 
     private static final long serialVersionUID = 1L;
 

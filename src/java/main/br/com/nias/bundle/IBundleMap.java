@@ -1,5 +1,6 @@
 package br.com.nias.bundle;
 
+import java.io.Serializable;
 import java.util.ResourceBundle;
 
 import br.com.lombok.enumerator.LocaleEnum;
@@ -11,7 +12,7 @@ import br.com.lombok.enumerator.LocaleEnum;
  * @author Marcos Alves Cunha
  * @version 1.0
  */
-public interface IBundleMap {
+public interface IBundleMap extends Serializable {
 
     /**
      * Método responsável em obter um objeto {@link ResourceBundle} contendo os

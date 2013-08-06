@@ -1,8 +1,7 @@
-package br.com.nias.bundle.imp;
+package br.com.nias.bundle.imp.external;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +11,7 @@ import java.util.ResourceBundle;
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.bundle.IBundleMap;
 
-public class BundleMapExternal implements IBundleMap, Serializable {
+public class BundleMapExternal implements IBundleMap {
 
     private static final long serialVersionUID = 1L;
 

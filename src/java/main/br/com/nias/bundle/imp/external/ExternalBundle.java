@@ -1,4 +1,4 @@
-package br.com.nias.bundle.imp;
+package br.com.nias.bundle.imp.external;
 
 import java.util.Enumeration;
 import java.util.HashMap;

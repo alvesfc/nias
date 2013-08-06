@@ -1,5 +1,7 @@
 package br.com.nias.bundle;
 
+import java.io.Serializable;
+
 /**
  * Interface que define os metodos necessarios para leitura das mensagens de um
  * determinado arquivo properties.
@@ -7,7 +9,7 @@ package br.com.nias.bundle;
  * @author Marcos Alves Cunha
  * @version 1.0
  */
-public interface IMessageBundle {
+public interface IMessageBundle extends Serializable {
 
     /**
      * Recupera mensagem conforme chave informada.<BR>

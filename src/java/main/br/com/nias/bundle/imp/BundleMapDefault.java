@@ -1,6 +1,5 @@
 package br.com.nias.bundle.imp;
 
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,13 +9,13 @@ import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.bundle.IBundleMap;
 
 /**
- * Implementacao da interface {@link IBundleMap}.</BR> Esta classe e responsavel
- * por criar o map contendo o caminho para os arquivos properties.
+ * Implementação da interface {@link IBundleMap}.</BR> 
+ * Esta classe e responsável por criar o map contendo o caminho para os arquivos properties.
  * 
  * @author Marcos Alves Cunha
  * @version 1.0
  */
-public class BundleMapDefault implements IBundleMap, Serializable {
+public class BundleMapDefault implements IBundleMap {
 
     private static final long serialVersionUID = 1L;
 
