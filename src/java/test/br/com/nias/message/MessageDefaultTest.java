@@ -1,11 +1,13 @@
 package br.com.nias.message;
 
+
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.message.imp.MessageDefault;
+import br.com.nias.message.imp.TranslateDefault;
 
 public class MessageDefaultTest {
 
@@ -26,8 +28,7 @@ public class MessageDefaultTest {
 		String result = message.getKey();
 
 		Assert.assertEquals(target, result);
-	}
-	
+	}	
 	@Test
 	public void testArgsValue() {
 		Object[] target = new Object[] { "a", "b" };
@@ -45,10 +46,11 @@ public class MessageDefaultTest {
 	public void testTranslation() {
 		String target = "key";
 		String key = "key";
-
+		
 		IMessage message = new MessageDefault(key);
-
-		String result = message.getTranslation().transnlate(LocaleEnum.DEFAULT);
+		ITranslation t = new TranslateDefault(message);
+		
+		String result = t.transnlate(LocaleEnum.DEFAULT);
 
 		Assert.assertEquals(target, result);
 	}
