@@ -15,21 +15,27 @@ public final class ConstantBundle {
      * .properties.
      */
     public static final String BUNDLE_PATH = "";
+    
+    /**
+     * Constante com o nome do arquivo de Configuração.
+     */
+    public static final String CONFIG_BUNDLE =  "config/config";
+    
+    /**
+     * Constante com o nome do arquivo de Configuração do Banco.
+     */
+    public static final String DATABASE_BUNDLE =  "config/dataBase";
 
     /**
      * Constante com o nome do arquivo de Log das mensagens.
      */
-    public static final String BUSINESS_BUNDLE = BUNDLE_PATH
-            + "business/LogMessages";
+    public static final String BUSINESS_BUNDLE = BUNDLE_PATH+ "business/LogMessagesBusniess";
 
     /**
      * Constante com o nome do arquivo que irá armazenar as Labels da camada
      * WEB.
      */
-    public static final String CLIENT_BUNDLE = BUNDLE_PATH
-            + "client/ClientMessages";
+    public static final String CLIENT_BUNDLE = BUNDLE_PATH + "client/ClientMessages";
 
-    private ConstantBundle() {
-    };
 
 }

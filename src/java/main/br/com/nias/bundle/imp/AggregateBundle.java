@@ -30,18 +30,8 @@ public class AggregateBundle extends ResourceBundle {
      *            {@link Locale} contendo o idioma.
      */
     public AggregateBundle(List<ResourceBundle> bundles, Locale locale) {
-        if (bundles != null) {
             this.locale = locale;
-            for (ResourceBundle bundle : bundles) {
-                Enumeration<String> keys = bundle.getKeys();
-                while (keys.hasMoreElements()) {
-                    String oneKey = keys.nextElement();
-                    if (!contents.containsKey(oneKey)) {
-                        contents.put(oneKey, bundle.getObject(oneKey));
-                    }
-                }
-            }
-        }
+            aggregate(bundles);
     }
 
     /**
@@ -51,6 +41,10 @@ public class AggregateBundle extends ResourceBundle {
      *            Lista de bundles que irá realizar o merge.
      */
     public AggregateBundle(List<ResourceBundle> bundles) {
+        aggregate(bundles);
+    }
+    
+    private void aggregate(List<ResourceBundle> bundles){
         if (bundles != null) {
             for (ResourceBundle bundle : bundles) {
                 Enumeration<String> keys = bundle.getKeys();

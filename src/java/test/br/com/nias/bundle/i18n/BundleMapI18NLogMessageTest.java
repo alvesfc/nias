@@ -11,25 +11,38 @@ import org.junit.Test;
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.bundle.IBundleMap;
 import br.com.nias.bundle.IMessageBundle;
+import br.com.nias.bundle.constant.ConstantBundle;
 import br.com.nias.bundle.imp.i18n.BundleMapI18N;
 import br.com.nias.bundle.imp.i18n.MessageBundleI18N;
 
 public class BundleMapI18NLogMessageTest {
     private static IBundleMap bundleMap;
-    private static final String LOG_MESSAGE = "business/LogMessagesBusniess";
-    private static final String CLIENT_MESSAGE = "client/ClientMessages";
+    private static final String LOG_MESSAGE= ConstantBundle.BUSINESS_BUNDLE;
+    private static final String CLIENT_MESSAGE= ConstantBundle.CLIENT_BUNDLE;
     
     @BeforeClass
-    public static void init() {
+    public static void init(){
         Collection<String> fileNames = new ArrayList<String>();
         fileNames.add(LOG_MESSAGE);
         fileNames.add(CLIENT_MESSAGE);
         bundleMap = new BundleMapI18N(fileNames);
-
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void testBundleMapDefaultNull() {
+        IBundleMap bundle = new BundleMapI18N(null);
+        Assert.fail();
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void testBundleMapDefaultEmpty() {
+        Collection<String> fileNames = new ArrayList<String>();
+        IBundleMap bundle = new BundleMapI18N(fileNames);
+        Assert.fail();
     }
     
     @Test
-    public void testBundleMapDefaultl() {
+    public void testBundleMapDefault() {
         ResourceBundle bundle = bundleMap.getResourseBundle(LOG_MESSAGE,LocaleEnum.DEFAULT);
         IMessageBundle msg = new MessageBundleI18N(bundle);
         String expecteds = "Usuário e/ou senha inválido, tente novamente.";

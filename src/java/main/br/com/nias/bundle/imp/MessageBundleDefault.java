@@ -1,7 +1,6 @@
 package br.com.nias.bundle.imp;
 
 import java.text.MessageFormat;
-import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import br.com.nias.bundle.IMessageBundle;
@@ -21,6 +20,9 @@ public class MessageBundleDefault implements IMessageBundle {
     protected ResourceBundle resourceBundle;
 
     public MessageBundleDefault(ResourceBundle resourceBundle) {
+        if (resourceBundle == null) {
+            throw new IllegalArgumentException("ResourceBundle must not be null");
+        }
         this.resourceBundle = resourceBundle;
     }
 
@@ -30,7 +32,7 @@ public class MessageBundleDefault implements IMessageBundle {
         String value;
         try {
             value = resourceBundle.getString(key);
-        } catch (MissingResourceException e) {
+        } catch (Exception e) {
             value = key;
         }
 

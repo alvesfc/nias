@@ -57,6 +57,9 @@ public class BundleMapExternal implements IBundleMap {
      *            - Collection contendo os caminhos dos arquivos.
      */
     public BundleMapExternal(Collection<String> fileNames) throws IOException {
+        if (fileNames == null || fileNames.size()==0) {
+            throw new IllegalArgumentException("fileNames must not be null or empty");
+        }
         this.fileNames = fileNames;
         this.createResourceMap();
     }

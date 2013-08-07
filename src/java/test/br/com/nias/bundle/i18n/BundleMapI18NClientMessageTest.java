@@ -11,12 +11,13 @@ import org.junit.Test;
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.bundle.IBundleMap;
 import br.com.nias.bundle.IMessageBundle;
+import br.com.nias.bundle.constant.ConstantBundle;
 import br.com.nias.bundle.imp.i18n.BundleMapI18N;
 import br.com.nias.bundle.imp.i18n.MessageBundleI18N;
 
 public class BundleMapI18NClientMessageTest {
     private static IBundleMap bundleMap;
-    private static final String CLIENT_MESSAGE = "client/ClientMessages";
+    private static final String CLIENT_MESSAGE =  ConstantBundle.CLIENT_BUNDLE;
     private static final String NICKNAME = "lbl_user_nickname";
     
     @BeforeClass

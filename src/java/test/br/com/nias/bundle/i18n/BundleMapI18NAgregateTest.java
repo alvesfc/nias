@@ -11,13 +11,14 @@ import org.junit.Test;
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.bundle.IBundleMap;
 import br.com.nias.bundle.IMessageBundle;
+import br.com.nias.bundle.constant.ConstantBundle;
 import br.com.nias.bundle.imp.i18n.BundleMapAggregateI18N;
 import br.com.nias.bundle.imp.i18n.MessageBundleI18N;
 
 public class BundleMapI18NAgregateTest {
     private static IBundleMap bundleMap;
-    private static final String MESSAGE_PROPERTIES = "business/LogMessagesBusniess";
-    private static final String CLIENT_MESSAGE = "client/ClientMessages";
+    private static final String MESSAGE_PROPERTIES = ConstantBundle.BUSINESS_BUNDLE;
+    private static final String CLIENT_MESSAGE = ConstantBundle.CLIENT_BUNDLE;
     private static final String NICKNAME = "lbl_user_nickname";
     private static final String LOGIN = "msg_login_invalido";
 
@@ -94,4 +95,6 @@ public class BundleMapI18NAgregateTest {
 
         Assert.assertEquals(expecteds, actuals);
     }
+    
+   
 }

@@ -18,7 +18,7 @@ import br.com.nias.util.Utility;
 public class BundleMapI18N implements IBundleMap {
     private static final long serialVersionUID = 1L;
 
-    protected transient Map<String, ResourceBundle> resourceBundleMap;
+    protected  Map<String, ResourceBundle> resourceBundleMap;
    
 
     /**
@@ -29,6 +29,9 @@ public class BundleMapI18N implements IBundleMap {
      *            - Collection contendo os caminhos dos arquivos.
      */
     public BundleMapI18N(Collection<String> fileNames) {
+        if (fileNames == null || fileNames.size()==0) {
+            throw new IllegalArgumentException("fileNames must not be null or empty");
+        }
         this.resourceBundleMap = Utility.createResourceMapI18N(fileNames);
     }
 

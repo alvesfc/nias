@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import br.com.lombok.enumerator.LocaleEnum;
+import br.com.nias.bundle.constant.ConstantBundle;
 import br.com.nias.bundle.imp.BundleMapDefault;
 import br.com.nias.bundle.imp.MessageBundleDefault;
 
@@ -17,7 +18,7 @@ import br.com.nias.bundle.imp.MessageBundleDefault;
 public class BundleMapDefaultTest {
 	
     private static IBundleMap bundleMap;
-    private static final String CONFIG = "config/config";
+    private static final String CONFIG = ConstantBundle.CONFIG_BUNDLE;
     private static final String TEST = "config_test";
     
     @BeforeClass
