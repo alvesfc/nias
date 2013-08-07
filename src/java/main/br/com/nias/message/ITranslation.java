@@ -11,7 +11,7 @@ import br.com.lombok.enumerator.LocaleEnum;
  * @version 1.0
  * 
  */
-public interface ITranslate extends Serializable{
+public interface ITranslation extends Serializable{
 
     /**
      * Método responsável em traduzir a mensagem de acordo com o

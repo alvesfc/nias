@@ -26,11 +26,4 @@ public interface IMessage extends Serializable{
      */
     Object[] getArguments();
 
-    /**
-     * Metodo respnsável em obter a tradução da mensagen de exceção.
-     * 
-     * @return objeto {@link ITranslate} com a tradução da mensagem.
-     */
-    ITranslate getTranslation();
-
 }
