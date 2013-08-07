@@ -20,7 +20,7 @@ public class BundleMapDefault implements IBundleMap {
     private static final long serialVersionUID = 1L;
 
     protected Map<String, ResourceBundle> resourceBundleMap;
-    protected Collection<String> fileNames;
+    
 
     /**
      * Construtor responsável em criar o Map de ResourceBundle a partir de uma
@@ -30,7 +30,6 @@ public class BundleMapDefault implements IBundleMap {
      *            - Collection contendo os caminhos dos arquivos.
      */
     public BundleMapDefault(Collection<String> fileNames) {
-        this.fileNames = fileNames;
         this.resourceBundleMap = Utility.createResourceMap(fileNames);
     }
 

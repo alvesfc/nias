@@ -1,5 +1,7 @@
 package br.com.nias.message;
 
+import java.io.Serializable;
+
 /**
  * Interface respnsável em definir os matodos necessários para obter os dados
  * da mensagem.
@@ -8,7 +10,7 @@ package br.com.nias.message;
  * @version 1.0
  * 
  */
-public interface IMessage {
+public interface IMessage extends Serializable{
 
     /**
      * Metodo respnsável em obter o valor da mensagem

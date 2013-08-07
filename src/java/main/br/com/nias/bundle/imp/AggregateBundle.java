@@ -10,12 +10,11 @@ import java.util.ResourceBundle;
 import br.com.nias.util.IteratorEnumeration;
 
 /**
- * A {@link ResourceBundle} which's content is aggregated from multiple source
- * bundles.
- * <p/> 
- * This class is package-private for the sake of testability.
+ * Classe que estende {@link ResourceBundle}.</BR> Esta classe é responsável por
+ * agrupar vários {@link ResourceBundle} eliminado as chaves duplicadas.
  * 
- * @author Gunnar Morling
+ * @author Marcos Alves Cunha
+ * @version 1.0
  */
 public class AggregateBundle extends ResourceBundle {
 
@@ -23,14 +22,12 @@ public class AggregateBundle extends ResourceBundle {
     private Locale locale;
 
     /**
-     * Creates a new AggregateBundle.
+     * Criando um novo AggregateBundle.
      * 
      * @param bundles
-     *            A list of source bundles, which shall be merged into one
-     *            aggregated bundle. The newly created bundle will contain all
-     *            keys from all source bundles. In case a key occurs in multiple
-     *            source bundles, the value will be taken from the first bundle
-     *            containing the key.
+     *            Lista de bundles que irá realizar o merge.
+     *@param locale
+     *            {@link Locale} contendo o idioma.
      */
     public AggregateBundle(List<ResourceBundle> bundles, Locale locale) {
         if (bundles != null) {
@@ -46,7 +43,13 @@ public class AggregateBundle extends ResourceBundle {
             }
         }
     }
-    
+
+    /**
+     * Criando um novo AggregateBundle.
+     * 
+     * @param bundles
+     *            Lista de bundles que irá realizar o merge.
+     */
     public AggregateBundle(List<ResourceBundle> bundles) {
         if (bundles != null) {
             for (ResourceBundle bundle : bundles) {

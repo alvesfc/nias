@@ -1,7 +1,5 @@
 package br.com.nias.message.imp;
 
-import java.io.Serializable;
-
 import br.com.nias.message.IMessage;
 import br.com.nias.message.ITranslate;
 
@@ -12,7 +10,7 @@ import br.com.nias.message.ITranslate;
  * @version 1.0
  * 
  */
-public class MessageDefault implements IMessage, Serializable {
+public class MessageDefault implements IMessage {
 
     private static final long serialVersionUID = 1L;
     private String key;

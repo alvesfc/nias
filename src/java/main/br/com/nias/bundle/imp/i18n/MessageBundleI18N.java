@@ -1,28 +1,36 @@
 package br.com.nias.bundle.imp.i18n;
 
 import java.text.MessageFormat;
-import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.lombok.i18n.ILocalizable;
-import br.com.nias.bundle.IMessageBundle;
+import br.com.nias.bundle.imp.MessageBundleDefault;
 
 /**
- * Classe que implementa as interfaces {@link IMessageBundle} e
- * {@link ILocalizable} para obter uma string internacionalizada do arquivo
- * properties.
+ * Classe que estende  da  {@link MessageBundleDefault} e
+ * implementa a interface {@link ILocalizable} para obter uma string 
+ * internacionalizada do arquivo properties.
+ * Essa classe irá internacionalizar a chave (Key) e os argumentos (arguments).
  * 
  * @author Marcos Alves
  * @version 1.0
  * 
  */
-public class MessageBundleI18N implements IMessageBundle, ILocalizable {
+public class MessageBundleI18N extends MessageBundleDefault implements ILocalizable {
 
     private static final long serialVersionUID = 1L;
 
-    private ResourceBundle resourceBundle;
-
+    
+    public MessageBundleI18N(ResourceBundle resourceBundle) {
+        super(resourceBundle);
+    }
+    
+    /**
+     * Método que realiza a internacionalização dos Argumentos
+     * @param args - Argumentos que serão internacionalizados
+     * @return Lista de Argumentos internacionalizados
+     */
     private Object[] getArgumentsI18N(Object[] args) {
         Object[] arr = new Object[args.length];
         int i = 0;
@@ -33,22 +41,6 @@ public class MessageBundleI18N implements IMessageBundle, ILocalizable {
 
         return arr;
 
-    }
-
-    public MessageBundleI18N(ResourceBundle resourceBundle) {
-        this.resourceBundle = resourceBundle;
-    }
-
-    @Override
-    public String getMessage(String key) {
-        String value;
-        try {
-            value = resourceBundle.getString(key);
-        } catch (MissingResourceException e) {
-            value = key;
-        }
-
-        return value;
     }
 
     @Override

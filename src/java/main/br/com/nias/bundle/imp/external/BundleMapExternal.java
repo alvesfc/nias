@@ -11,12 +11,20 @@ import java.util.ResourceBundle;
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.bundle.IBundleMap;
 
+/**
+ * Implementação da interface {@link IBundleMap}.</BR> 
+ * Esta classe é responsável por criar o map contendo o caminho para os arquivos properties
+ * fora do classpath.
+ * 
+ * @author Marcos Alves Cunha
+ * @version 1.0
+ */
 public class BundleMapExternal implements IBundleMap {
 
     private static final long serialVersionUID = 1L;
 
-    private Map<String, ResourceBundle> resourceBundleMap;
-    private Collection<String> fileNames;
+    protected Map<String, ResourceBundle> resourceBundleMap;
+    protected Collection<String> fileNames;
 
     private Properties getProperties(String path) throws IOException {
         Properties prop = new Properties();
@@ -29,8 +37,8 @@ public class BundleMapExternal implements IBundleMap {
             if (file != null) {
                 file.close();
             }
-
         }
+        
         return prop;
     }
 

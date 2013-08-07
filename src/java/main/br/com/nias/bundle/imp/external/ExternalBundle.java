@@ -2,7 +2,6 @@ package br.com.nias.bundle.imp.external;
 
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -12,7 +11,6 @@ import br.com.nias.util.IteratorEnumeration;
 class ExternalBundle extends ResourceBundle {
 
     private Map<String, Object> contents = new HashMap<String, Object>();
-    private Locale locale;
 
     /**
      * Creates a new AggregateBundle.
@@ -45,11 +43,6 @@ class ExternalBundle extends ResourceBundle {
     @Override
     protected Object handleGetObject(String key) {
         return contents.get(key);
-    }
-
-    @Override
-    public Locale getLocale() {
-        return this.locale;
     }
 
 }

@@ -1,12 +1,17 @@
 package br.com.nias.message.imp;
 
-import java.io.Serializable;
-
 import br.com.lombok.enumerator.LocaleEnum;
 import br.com.nias.message.IMessage;
 import br.com.nias.message.ITranslate;
 
-public class DefaultTranslate implements Serializable, ITranslate {
+/**
+ * Implementação default da interface {@link ITranslate}
+ * 
+ * @author Marcos Alves Cunha
+ * @version 1.0
+ * 
+ */
+public class DefaultTranslate implements ITranslate {
 
     private static final long serialVersionUID = 1L;
 

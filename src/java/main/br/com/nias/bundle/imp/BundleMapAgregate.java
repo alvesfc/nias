@@ -4,11 +4,10 @@ import java.util.Collection;
 import java.util.ResourceBundle;
 
 import br.com.lombok.enumerator.LocaleEnum;
-import br.com.nias.bundle.IBundleMap;
 import br.com.nias.util.Utility;
 
 /**
- * Implementacao da interface {@link IBundleMap}.</BR> Esta classe e responsavel
+ * Implementação da interface {@link IBundleMap}.</BR> Esta classe é responsável
  * por criar o map contendo o caminho para os arquivos properties.
  * 
  * @author Marcos Alves Cunha
@@ -17,7 +16,7 @@ import br.com.nias.util.Utility;
 public class BundleMapAgregate extends BundleMapDefault {
 
     private static final long serialVersionUID = 1L;
-
+    private Collection<String> fileNames;
     
     /**
      * Construtor responsável em criar o Map de ResourceBundle a partir de uma
@@ -28,6 +27,7 @@ public class BundleMapAgregate extends BundleMapDefault {
      */
     public BundleMapAgregate(Collection<String> fileNames) {
         super(fileNames);
+        this.fileNames = fileNames;
     }
 
     @Override

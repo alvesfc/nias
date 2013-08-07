@@ -18,7 +18,7 @@ public class MessageBundleDefault implements IMessageBundle {
 
     private static final long serialVersionUID = 1L;
 
-    private ResourceBundle resourceBundle;
+    protected ResourceBundle resourceBundle;
 
     public MessageBundleDefault(ResourceBundle resourceBundle) {
         this.resourceBundle = resourceBundle;

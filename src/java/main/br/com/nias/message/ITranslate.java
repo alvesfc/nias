@@ -1,5 +1,7 @@
 package br.com.nias.message;
 
+import java.io.Serializable;
+
 import br.com.lombok.enumerator.LocaleEnum;
 
 /**
@@ -9,7 +11,7 @@ import br.com.lombok.enumerator.LocaleEnum;
  * @version 1.0
  * 
  */
-public interface ITranslate {
+public interface ITranslate extends Serializable{
 
     /**
      * Método responsável em traduzir a mensagem de acordo com o
